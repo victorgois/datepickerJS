@@ -23,6 +23,22 @@ h1 span{
     font-weight: 300;
 }
 
+
+.event-images {
+    position: relative;
+    border: 1px;
+    margin: auto;
+    width: 600px;
+    height: 450px;
+    
+}
+
+#img {
+    display: block;
+    margin: auto;
+    position: relative;  
+}
+
 .date-picker {
     position: relative;
     width: 100%;
@@ -64,6 +80,7 @@ h1 span{
 
 .date-picker .dates.active {
     display: block;
+    padding: 5%;
 }
 
 .date-picker .dates .month {
@@ -71,6 +88,7 @@ h1 span{
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #EEE;
+    padding-bottom: 5%;
 }
 
 .date-picker .dates .month arrows {

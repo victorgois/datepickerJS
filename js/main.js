@@ -5,6 +5,7 @@ const mth_element = document.querySelector('.date-picker .dates .month .mth');
 const next_mth_element = document.querySelector('.date-picker .dates .month .next-mth');
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
+const images_element = document.querySelector('.event-images #img')
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
@@ -18,6 +19,8 @@ let selectedDay = day;
 let selectedMonth = month;
 let selectedYear = year;
 
+let image = document.querySelector('#img')
+
 mth_element.textContent = months[month] + ' ' + year;
 
 selected_date_element.textContent = formatDate(date);
@@ -27,9 +30,17 @@ populateDates();
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPreviousMonth);
+images_element.addEventListener('click', showImage);
 
 
 //FUNCTIONS
+
+function showImage(e){
+    var img = document.querySelector('#img');
+    img.src = './img/avengers.jpg';
+    document.getElementById('img').appendChild(img);
+}
+
 function toggleDatePicker(e){
     if (!checkEventPathForClass(e.path, 'dates')){
         dates_element.classList.toggle('active');
@@ -54,6 +65,7 @@ function goToPreviousMonth(e){
     mth_element.textContent = months[month] + ' ' + year;
 }
 
+    //Function to populate the datepicker with dates
 function populateDates(e){
     days_element.innerHTML = '';
     
