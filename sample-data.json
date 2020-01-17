@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "title": "Rock im Park",
+      "title": "RockimPark",
       "description": "Rock im Park is a music festival held annually in May or June at the Volkspark Dutzendteich in Nuremberg and a parallel event to Rock am Ring with an almost identical line-up.",
       "image": "./rock-im-park.jpg",
       "start": 1559890800,
@@ -35,7 +35,7 @@
       "category": "Carnival"
     },
     {
-      "title": "Avengers - Endgame",
+      "title": "Avengers-Endgame",
       "description": "Half of all life in the universe has been wiped out and there seems to be only one possible future. Do the Avengers and their allied superheroes have what they need to lift the crushing power of the Infinity Stones?",
       "image": "./avengers.jpg",
       "start": 1556143140,
@@ -52,7 +52,7 @@
       "category": "Movie"
     },
     {
-      "title": "PCIM EUROPE",
+      "title": "PCIM-EUROPE",
       "description": "The PCIM Europe is the world's leading exhibition and conference for power electronics, intelligent motion, renewable energy, and energy management.",
       "image": "",
       "start": 1557230400,

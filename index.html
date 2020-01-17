@@ -9,32 +9,100 @@
     <link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
-    <h1>SOON, <span> NEXT </span>TO YOU ...</h1>
+    <h1>EVENT <span> DATE PICKER </span></h1>
 
-    <div class = "date-picker">
-        <div class = "selected-date"></div>
-    
-        <div class= "dates">
-            <div class="month">
-                <div class="arrows prev-mth">&lt;</div>
-                <div class="mth"></div>
-                <div class="arrows next-mth">&gt;</div>
+    <div class="main-container">
+        <div class="left-container">
+            <div class="logo">
+
             </div>
+            <div class = "date-picker">
+                <div class = "selected-date"></div>
+            
+                <div class= "dates">
+                    <div class="month">
+                        <div class="arrows prev-mth">&lt;</div>
+                        <div class="mth"></div>
+                        <div class="arrows next-mth">&gt;</div>
+                    </div>
+            
+                    <div class="days"></div>
+        
+                </div>
+            </div>
+        
+            <div class="right-container">
+                <div class="event-Avengers-Endgame">
+                    <img id="Avengers-Endgame" src="./img/avengers.jpg" class="responsive" style="display: block;"/>
+                </div>
+
+                <div class="description-images">
+                    <ul style="list-style-type:none;">
+                        <li id="title">Avengers - Endgame</li>
+                        <li id="description">Half of all liae in the universe has been wiped out and there seems to be only one possible future. Do the Avengers and their allied superheroes have what they need to lift the crushing power of the Infinity Stones?</li>
+                        <li id="start"></li>
+                        <li id="end"></li>
+                        <li id="recurrence">daily</li>
+                        <li id="costs">16,00€</li>
+                        <li id="link">https://www.cinecitta.de/</li>
+                        <li id="venue"></li>
+                        <li id="category">Movie"</li>
+                    </ul>  
+                </div>
+                
+                <div class="event-Oktoberfest" id="event-images">
+                    <img id="event-image oktoberfest" src="./img/oktoberfest.jpg" class="responsive" style="display: block;"/>
+                </div>
     
-            <div class="days"></div>
+                    <div class="description-images">
+                        <ul style="list-style-type:none;">
+                            <li id="title">Oktoberfest</li>
+                            <li id="description">The Oktoberfest in Munich is the biggest folk festival in the world.<br />It takes place since 1810 on the Theresienwiese in the Bavarian capital Munich.</li>
+                            <li id="start"></li>
+                            <li id="end"></li>
+                            <li id="recurrence">monthly</li>
+                            <li id="costs">0,00€</li>
+                            <li id="link">https://www.oktoberfest.de/</li>
+                            <li id="venue"></li>
+                            <li id="category">Carnival</li>
+                        </div>
+                
+                    <div class="event-RockimPark" id="event-images"> 
+                        <img id="RockimPark" src="./img/rock-im-park.jpg" class="responsive" style="display: block;"/>
+                            <div class="description-images">
+                                <p id="title">Rock im Park</p>
+                                <p id="description">Rock im Park is a music festival held annually in May or June at the Volkspark Dutzendteich in Nuremberg and a parallel event to Rock am Ring with an almost identical line-up.</p>
+                                <p id="start"></p>
+                                <p id="end"></p>
+                                <p id="recurrence">yearly</p>
+                                <p id="costs">239,00€</p>
+                                <p id="link">https://www.rock-im-park.com/</p>
+                                <p id="venue"></p>
+                                <p id="category">Festival</p>
+                            </div>
+                    </div>
+                
+                    <div class="event-PCIM-EUROPE" id="event-images"> 
+                        <img id="PCIM-EUROPE" src="./img/avengers.jpg" class="responsive" style="display: block;"/>
+                            <div class="description-images">
+                                <p id="title">PCIM-EUROPE</p>
+                                <p id="description">The PCIM Europe is the world's leading exhibition and conference for power electronics, intelligent motion, renewable energy, and energy management.</p>
+                                <p id="start"></p>
+                                <p id="end"></p>
+                                <p id="recurrence">none</p>
+                                <p id="costs">24,00€</p>
+                                <p id="link">https://pcim.mesago.com/events/en.html</p>
+                                <p id="venue"></p>
+                                <p id="category">Fair</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="event-images">
-        <div id="img"></div>
-        <div id="img"></div>
-        <div id="img"></div>
-        <div id="img"></div>
 
     </div>
-    
+   
     <script src="./js/main.js"></script>
-
 
 </body>
 </html>
