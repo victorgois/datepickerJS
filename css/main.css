@@ -23,23 +23,38 @@ h1 span{
     font-weight: 300;
 }
 
-@media (min-width: 768px) {
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: 1fr;
-  
-    }
-  }
-
-@media(max-width: 768px){
+/* 
+@media(min-width: 768px){
     .container{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 4fr;
+        grid-template-rows: 2fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 40px;
+        justify-items: stretch;
+        align-items: stretch;
+        width: 100%;
     }
+    
+    .right-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+        justify-items: stretch;
+        align-items: stretch;
+     }
+    .row-Avengers, .row-Oktoberfest, .row-RockimPark, .row-PCIM {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+        justify-items: stretch;
+        align-items: stretch;
 }
-
+  */
 .container {
     display: grid;
     grid-template-columns: 1fr 2fr;

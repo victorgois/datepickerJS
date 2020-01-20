@@ -8,7 +8,7 @@ const next_mth_element = document.querySelector('.date-picker .dates .month .nex
 const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
 const days_element = document.querySelector('.date-picker .dates .days');
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 let date = new Date();
 let day = date.getDate();
@@ -35,13 +35,14 @@ mth_element.textContent = months[month] + ' ' + year;
 selected_date_element.textContent = formatDate(date);
 populateDates();
 
+
 //EVENT LISTENERS
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPreviousMonth);
 
-//FUNCTIONS
 
+//FUNCTIONS
 function getDateFromEvents(jsonObj){
     let startArray = [];
     
@@ -65,12 +66,12 @@ function loadJson(){
     request.send();
     request.onload = function() {
         eventsJson = request.response;
-        timeStampArray = getDateFromEvents(eventsJson['events']);//Array com timestamps
-        eventsJson = eventsJson['events'];//objeto com eventos
-        startDateArray = validateDate(timeStampArray);// recebe um array com as datas convertidas
+        timeStampArray = getDateFromEvents(eventsJson['events']);
+        eventsJson = eventsJson['events'];
+        startDateArray = validateDate(timeStampArray);
 
         for (var i =0; i<startDateArray.length; i++){
-            //if (selectedDate < startDateArray[i] || selectedDate > endDateArray[i]){
+      
             if (selectedDate < startDateArray[i] || selectedDate > endDateArray[i]){
                 hideElements(i);
             }
@@ -79,8 +80,6 @@ function loadJson(){
                 showElements(i);
             }
         }
-
-
       }
 }
 
@@ -112,7 +111,6 @@ function goToPreviousMonth(e){
 
 }
 
-    //Function to populate the datepicker with dates
 function populateDates(e){
     days_element.innerHTML = '';
     
@@ -159,7 +157,7 @@ function validateDate(timestamp){
         startDate.push(new Date(start_timestamp*1000));
 
     }
-    return startDate; //retorna um array com as datas convertidas
+    return startDate;
 
 }
 
@@ -209,10 +207,6 @@ function showElements(e){
 
 }
 
-
-
-
-//HELPER FUNCTIONS
 function checkEventPathForClass(path, selector){
     for (let i = 0; i < path.length; i++){
         if (path[i].classList && path[i].classList.contains(selector)){
