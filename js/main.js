@@ -40,35 +40,14 @@ let startYear = selectedYear;
 
 let eventsObj, timeStampArray = [];
 let eventsJson;
+let endDateArray = [];
+let startDate = [];
 
-
-/* let title = [];
-let description = [];
-let image = [];
-let start = [];
-let end = [];
-let recurrence = [];
-let costs = [];
-let link = [];
-let venue = [];
-let category = [];
- */
 
 mth_element.textContent = months[month] + ' ' + year;
 
 selected_date_element.textContent = formatDate(date);
 populateDates();
-
-/* title_element.textContent = title;
-description_element.textContent = description;
-image_element.textContent = image;
-start_element.textContent = start;
-end_element.textContent = end;
-costs_element.textContent = costs;
-link_element.textContent = link;
-venue_element.textContent = venue;
-category_element.textContent = category; */
-
 
 //EVENT LISTENERS
 date_picker_element.addEventListener('click', toggleDatePicker);
@@ -77,13 +56,18 @@ prev_mth_element.addEventListener('click', goToPreviousMonth);
 
 //FUNCTIONS
 
-function getStartFromEvents(jsonObj){
+function getDateFromEvents(jsonObj){
     let startArray = [];
+    
     for (var i = 0; i<jsonObj.length; i++){
+        var temp = jsonObj[i]['end'];
         startArray.push(jsonObj[i]['start']);
+        endDateArray.push(new Date(temp*1000));
     }
+
     return (startArray);
 }
+
 
 function loadJson(){
     
@@ -95,12 +79,12 @@ function loadJson(){
     request.send();
     request.onload = function() {
         eventsJson = request.response;
-        timeStampArray = getStartFromEvents(eventsJson['events']);//Array com timestamps
+        timeStampArray = getDateFromEvents(eventsJson['events']);//Array com timestamps
         eventsJson = eventsJson['events'];//objeto com eventos
         
         startDateArray = validateDate(timeStampArray);// recebe um array com as datas convertidas
         for (var i =0; i<startDateArray.length; i++){
-            if (startDateArray[i] <= selectedDate){
+            if (selectedDate <= startDateArray[i] || selectedDate >= endDateArray[i]){
                 hideElements(i);
             } else{
                 showElements(i);
@@ -190,11 +174,12 @@ function validateDate(timestamp){
 
 }
 
+
 function hideElements(e){
-    var allOktoberfestByClass = document.getElementsByClassName('event-Oktoberfest');
-    var allAvengersByClass = document.getElementsByClassName('event-Avengers-Endgame');
-    var allRockImParkByClass = document.getElementsByClassName('event-RockimPark');
-    var allPCIMByClass = document.getElementsByClassName('event-PCIM-EUROPE');
+    var allOktoberfestByClass = document.getElementsByClassName('row-Oktoberfest');
+    var allAvengersByClass = document.getElementsByClassName('row-Avengers');
+    var allRockImParkByClass = document.getElementsByClassName('row-RockimPark');
+    var allPCIMByClass = document.getElementsByClassName('row-PCIM');
 
     var title_json = eventsJson[e]['title'];
     if (title_json == 'RockimPark'){
@@ -213,10 +198,10 @@ function hideElements(e){
 }
 
 function showElements(e){
-    var allOktoberfestByClass = document.getElementsByClassName('event-Oktoberfest');
-    var allAvengersByClass = document.getElementsByClassName('event-Avengers-Endgame');
-    var allRockImParkByClass = document.getElementsByClassName('event-RockimPark');
-    var allPCIMByClass = document.getElementsByClassName('event-PCIM-EUROPE');
+    var allOktoberfestByClass = document.getElementsByClassName('row-Oktoberfest');
+    var allAvengersByClass = document.getElementsByClassName('row-Avengers');
+    var allRockImParkByClass = document.getElementsByClassName('row-RockimPark');
+    var allPCIMByClass = document.getElementsByClassName('row-PCIM');
 
     allRockImParkByClass[0].style.display = 'block';
     allOktoberfestByClass[0].style.display = 'block';
@@ -224,6 +209,7 @@ function showElements(e){
     allPCIMByClass[0].style.display = 'block';
 
 }
+
 
 
 
